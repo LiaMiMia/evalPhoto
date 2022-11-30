@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"; 
-import { connect, css, styled } from "frontity";
+import { css } from "frontity";
 import MenuMobile from "./menuMobile";
 import MenuDesktop from "./menuDesktop";
 import MediaLogo from "./MediaLogo";

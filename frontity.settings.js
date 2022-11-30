@@ -2,7 +2,7 @@ const settings = {
   "name": "charles-cantin-photographe",
   "state": {
     "frontity": {
-      "url": "http://charles-cantin-photographe.local",
+      "url": "https://mondernierprojet.fr",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -42,8 +42,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://charles-cantin-photographe.local/wp-json",
-          "url": "http://charles-cantin-photographe.local",
+          "api": "https://mondernierprojet.fr/wp-json",
+          "url": "https://mondernierprojet.fr",
           "homepage": "/accueil",
           "postsPage": "/gallerie"
         }

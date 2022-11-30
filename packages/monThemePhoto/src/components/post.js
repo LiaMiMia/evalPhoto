@@ -6,7 +6,6 @@ import Footer from "./footer"
 import FeaturedMedia from "./featuredMedia"
 import MediasIcons from "./MediasIcons"
 import { black, white } from "./varCss"
-import {BsArrowDownCircle} from 'react-icons/Bs';
 
 
 

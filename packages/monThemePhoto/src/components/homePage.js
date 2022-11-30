@@ -2,10 +2,10 @@ import React from "react"
 import { connect, styled, css } from "frontity"
 import {MenuHome} from "./menu"
 import FeaturedMedia from "./featuredMedia"
-import { white, HPMenuBG } from "./varCss"
+import { white} from "./varCss"
 import MediaIcons from "./MediasIcons"
 import MediaLogo from "./MediaLogo"
-import TheHead from "./head"
+
 
 const HomePage = ({state , libraries})=>{
   const data = state.source.get(state.router.link)

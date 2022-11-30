@@ -3,11 +3,10 @@ import Link from "@frontity/components/link"
 import React from 'react'
 import {BreakPointPad, pink, white} from './varCss'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GiHamburgerMenu } from 'react-icons/Gi';
-import { CgCloseR } from 'react-icons/Cg'
-import MediaLogo from './MediaLogo';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { CgCloseR } from 'react-icons/cg'
 import LogoMenuMobile from './LogoMenuMobile';
-import FrontityURL from 'frontity/dist/src/utils/url';
+
  
 // import DisplayedMenuMobile from './BurgerPres';
 

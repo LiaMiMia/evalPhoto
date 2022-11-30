@@ -1,6 +1,6 @@
 import React from "react"
 import { styled, connect, css } from "frontity"
-import {Menu} from "./menu"
+
 
 
 const Header = ()=>{

@@ -4,7 +4,6 @@ import Page from "./Page"
 import HomePage from './homePage'
 import TheHead from "./head"
 import Loader from "./loader"
-import GalleriePage from "./galleriePage"
 import List from "./post"
 
 

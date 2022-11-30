@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled, css } from "frontity"
 import Image from "@frontity/components/image";
-import {BsTelephone, BsInstagram, BsFacebook} from 'react-icons/Bs';
+import {BsTelephone, BsInstagram, BsFacebook} from 'react-icons/bs';
 import { black, IconTransition, white } from "./varCss";
 //import {AiOutlineFacebook}from 'react-icons/Ai'; 
 

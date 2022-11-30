@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "@frontity/components/link"
-import {css, connect, keyframes } from "frontity"
-import { white, MenuConstant, black, BreakPointPad, pink, LinkTransition } from './varCss'
+import {css, connect } from "frontity"
+import { white, MenuConstant, black, pink, LinkTransition } from './varCss'
 
 
 const MenuDesktop = ({state}) =>{
