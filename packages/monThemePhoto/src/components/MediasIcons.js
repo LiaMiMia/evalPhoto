@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react";
 import { connect, styled, css } from "frontity"
 import Image from "@frontity/components/image";
-import {BsTelephone, BsInstagram, BsFacebook, BsArrowBarRight} from 'react-icons/Bs';
+import {BsTelephone, BsInstagram, BsFacebook, BsArrowBarRight} from 'react-icons/bs';
 import { black, BreakPointPad, IconTransition, white, pink, IconRotateTransitionClose, IconRotateTransitionOpen, animTranslateIconsClose, animTranslateIconsOpen } from "./varCss";
 //import {AiOutlineFacebook}from 'react-icons/Ai'; 
 
