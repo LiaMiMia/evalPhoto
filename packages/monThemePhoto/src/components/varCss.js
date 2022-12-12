@@ -1,6 +1,6 @@
 import {css, keyframes} from "frontity"
 
-const black = 'black'
+const black = 'blue'
 const white = 'white'
 const pink = '#9C17ED'
 const BreakpointMobile = '100px'
