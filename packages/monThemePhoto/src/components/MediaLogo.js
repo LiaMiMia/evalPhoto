@@ -36,6 +36,8 @@ const PageLogoImage = styled(Image)`
   @media (max-width: ${BreakPointPad}){
     margin-left:30px;
     transform: translateY(34%);
+    width: 70px;
+    height: 70px;
   }
   @media (min-width: ${BreakPointPad}){
     right: 0.5%;

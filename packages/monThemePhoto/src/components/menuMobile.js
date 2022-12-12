@@ -1,7 +1,7 @@
 import { connect, styled, css } from 'frontity'
 import Link from "@frontity/components/link"
 import React from 'react'
-import {BreakPointPad, pink, white} from './varCss'
+import {BreakPointPad, menuAnim, pink, white} from './varCss'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgCloseR } from 'react-icons/cg'
@@ -97,20 +97,9 @@ const MMC = styled.div`
 `
 
 const MenuMobileOpen = styled.div`
-  background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
-  background-color: #cccccc;
-  background-size: contain;
-  position: fixed;
-  width: 200vw;
-  height: 100vh;
-  color: ${pink};
-  top: 0;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  animation: 0.3s ease-in ${menuAnim};
+  animation-fill-mode: forwards;
+  
   `
 
 // const DisplayedMenuMobile = ({state})=>{ 

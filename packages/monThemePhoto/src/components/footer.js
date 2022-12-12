@@ -2,13 +2,18 @@ import React from 'react'
 import Link from "@frontity/components/link"
 import {css, styled, connect} from "frontity"
 import Image from "@frontity/components/image";
-import {black, BreakPointPad, LinkTransition} from './varCss'
+import {black, BreakPointPad, LinkTransition, pink} from './varCss'
 
 
 const Footer = ({state}) =>{
   const media = state.source.url+"/wp-content/uploads/"
   return(
-    <footer>
+    <footer css={css`
+      font-size: smaller;
+        &>div, a{
+          color: ${pink}
+        }
+    `}>
       <ContentFooter>
       <FooterLogo src={media+ "2022/11/cropped-logoCharlesCantin.png"}/>
         <div css={css`width: 50%; height: 100%;`}>
@@ -46,7 +51,7 @@ const LinkStyled = css`
 const FooterLogo = styled(Image)`
   width: 100px;
   @media (max-width: ${BreakPointPad}){
-    margin-left:30px;
+    width: 70px;
   }
   @media (min-width: ${BreakPointPad}){
     right: 0.5%;

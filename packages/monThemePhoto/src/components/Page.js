@@ -90,6 +90,14 @@ const Page = ({state, libraries}) => {
         #wpcf7-f116-o1{
           display: block;
         }
+
+        figure{
+          display: flex;
+          &>img{
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
         `
         
       }
