@@ -3,7 +3,7 @@ import {useState} from "react";
 import { connect, styled, css } from "frontity"
 import Image from "@frontity/components/image";
 import {BsTelephone, BsInstagram, BsFacebook, BsArrowBarRight} from 'react-icons/bs';
-import { black, BreakPointPad, IconTransition, white, pink, IconRotateTransitionClose, IconRotateTransitionOpen, animTranslateIconsClose, animTranslateIconsOpen } from "./varCss";
+import { black, BreakPointPad, IconTransition, white, pink, IconRotateTransitionClose, IconRotateTransitionOpen, animTranslateIconsClose, animTranslateIconsOpen, IconTransitionHome } from "./varCss";
 //import {AiOutlineFacebook}from 'react-icons/Ai'; 
 
 const MediaIcons = ({state})=>{
@@ -19,12 +19,26 @@ const MediaIcons = ({state})=>{
   const [animRotateIcon, setanimRotateIcon] = useState(closeAnimIcon);
   const [animTranslateIcons, setanimTranslateIcons] = useState(animTranslateIconsClose)
   
+  const StyledImage = css`
+  scale: 3;
+  margin: 30px;
+  color: ${pink};
+  cursor: pointer;
+  &:hover{
+    animation-name: ${data.isHome ? IconTransitionHome : IconTransition};
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    
+  }
+`
+
   const ArrowStyled = css`
   scale: 2;
   color: ${pink};
   display: none;
+  cursor: pointer;
   @media(max-width:${BreakPointPad}){
-    display: ${ data.isHome ? 'none' : 'flex'};
+    display: ${data.isHome ? 'none' : 'flex'};
     animation: 1s ${animRotateIcon}; 
     animation-fill-mode: forwards;
   }
@@ -34,6 +48,7 @@ align-items: center;
 background-color: ${white};
 border-radius: 20px; 
 padding: 10px;
+z-index: 10;
 @media(max-width:${BreakPointPad}){
   animation : 1s ${animTranslateIcons};
   animation-fill-mode: forwards;
@@ -72,7 +87,7 @@ padding: 10px;
 
   return(
     <div css={data.isHome ? divIconHome : divIconsStyled}>
-      <MenuIcons css={css`color: ${data.isHome ? white : black}`}>
+      <MenuIcons css={css`color: ${data.isHome ? white : pink}`}>
         <BsTelephone css={StyledImage}/>
         <BsInstagram css={StyledImage}/>
         <BsFacebook css={StyledImage}/>
@@ -92,15 +107,7 @@ const MediaLogo = ({state})=>{
 export default connect(MediaIcons)
 
 
-const StyledImage = css`
-  scale: 3;
-  margin: 30px;
-  &:hover{
-    animation-name: ${IconTransition};
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-  }
-`
+
 
 const MenuIcons = styled.div`
   display: flex;

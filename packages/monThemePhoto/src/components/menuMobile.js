@@ -107,12 +107,12 @@ const MenuMobileOpen = styled.div`
 //   data.isHome ? DisplayedMenuMobileHome : DisplayedMenuMobilePage}  
 
 const DisplayedMenuMobile = css`
-  @media (max-width: ${BreakPointPad}) {
+  @media (max-width: 1000px) {
   	position: absolute;
     bottom: -30vh;
     right: 11vw;
   }
-  @media (min-width: ${BreakPointPad}) {
+  @media (min-width: 1000px) {
   	display: none;
   }
 `

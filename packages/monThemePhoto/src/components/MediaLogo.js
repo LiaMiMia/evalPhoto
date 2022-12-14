@@ -1,7 +1,7 @@
 import React from "react"
 import { connect, styled } from "frontity"
 import Image from "@frontity/components/image";
-import { BreakPointPad } from "./varCss";
+import { BreakPointPad, MobileBP } from "./varCss";
 
 const MediaLogo = ({state})=>{
   const media = state.source.url+"/wp-content/uploads/"
@@ -33,14 +33,19 @@ position: absolute;
 
 const PageLogoImage = styled(Image)`
   width: 100px;
-  @media (max-width: ${BreakPointPad}){
-    margin-left:30px;
+  @media (max-width: ${MobileBP}){
+    position: absolute;
+    left: 11vw;
+    top: 2vh;
     transform: translateY(34%);
     width: 70px;
     height: 70px;
   }
-  @media (min-width: ${BreakPointPad}){
-    right: 0.5%;
+  @media only screen and (orientation: landscape) and (max-width: ${MobileBP}) and (max-height: 280px){
+    top: -5vh;
+  }
+  @media (min-width: ${MobileBP}){
+    right: 3.5%;
     heigth: 100px;
     margin: 5px;
     position: absolute;

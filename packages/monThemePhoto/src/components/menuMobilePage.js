@@ -1,7 +1,7 @@
 import { connect, styled, css } from 'frontity'
 import Link from "@frontity/components/link"
 import React from 'react'
-import {BreakPointPad, pink, white} from './varCss'
+import {BreakPointPad, pink, white, MobileBP} from './varCss'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgCloseR } from 'react-icons/cg'
@@ -119,14 +119,18 @@ const MenuMobileOpen = styled.div`
   `
 
 const DisplayedMenuMobilePage = css`
-  @media (max-width: ${BreakPointPad}) {
+  @media (max-width: ${MobileBP}) {
     position: absolute;
     right: 15%;
+    top: 8vh;
     & > svg {
       color: ${pink};
     }
   }
-  @media (min-width: ${BreakPointPad}) {
+  @media only screen and (orientation: landscape) and (max-width: ${MobileBP}){
+    top: 15vh;
+  }
+  @media (min-width: ${MobileBP}) {
     display: none;
 }
 `

@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react"; 
+import React from "react"; 
 import { css } from "frontity";
 import MenuMobile from "./menuMobile";
 import MenuDesktop from "./menuDesktop";
 import MediaLogo from "./MediaLogo";
-import {BreakPointPad} from "./varCss";
+import {BreakPointPad, MobileBP} from "./varCss";
 import MenuMobilePage from "./menuMobilePage";
 
 const Menu = ({}) => {
@@ -29,7 +29,7 @@ const MenuHome = ({}) => {
 export {Menu, MenuHome};
 
 const Position = css`
-  @media(min-width: ${BreakPointPad}){
+  @media(min-width: ${MobileBP}){
   position: sticky;
   }
   height: 0px;

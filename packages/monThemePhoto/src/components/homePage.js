@@ -44,8 +44,6 @@ export default connect(HomePage)
 
 const MenuPosition = css`
     bottom: 0;
-    margin: 46px;
-    padding: 9px;
     right: 7%;
 `
 

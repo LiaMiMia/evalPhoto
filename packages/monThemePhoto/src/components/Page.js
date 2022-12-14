@@ -3,7 +3,7 @@ import Header from "./header"
 import { styled, css, Global } from "frontity"
 import { Menu } from "./menu"
 import Footer from "./footer"
-import { BreakPointPad } from "./varCss"
+import { BreakPointPad, pink } from "./varCss"
 import MediasIcons from "./MediasIcons"
 import { black } from "./varCss"
 
@@ -174,7 +174,8 @@ const MenuPosition = css`
 
 const MediaIconsStyled = css`
   position: fixed; 
-  color: ${black};
+  z-index: 1;
+  color: ${pink};
   height: auto;
   top: 50%;
   left: 20px;
