@@ -38,10 +38,11 @@ const MenuDesktop = ({state}) =>{
 
   return(
   <div css={ data.isHome ?  ContentHome : ContentPage}> 
-    <div css={LinkHover}><Link link="/" css={data.isHome ? LinkStyledWhite : LinkStyledBlack}>Accueil</Link></div> 
-    <div css={LinkHover}><Link link="/tarifs-et-prestations/" css={data.isHome ? LinkStyledWhite : LinkStyledBlack}>Tarifs et Prestations</Link></div>
-    <div css={LinkHover}><Link link="/gallerie/" css={data.isHome ? LinkStyledWhite : LinkStyledBlack}>Gallerie</Link></div>
-    <div css={LinkHover}><Link link="/contact/" css={data.isHome ? LinkStyledWhite : LinkStyledBlack}>Contact</Link></div>
+  {console.log(data.link)}
+    <div css={LinkHover}><Link link="/" css={data.isHome ? (data.link === "/" ? LinkStyledWhiteHover : LinkStyledWhite) : (data.link === "/" ? LinkStyledBlackHover : LinkStyledBlack) }>Accueil</Link></div> 
+    <div css={LinkHover}><Link link="/tarifs-et-prestations/" css={data.isHome ? (data.link === "/tarifs-et-prestations/" ? LinkStyledWhiteHover : LinkStyledWhite) : (data.link === "/tarifs-et-prestations/" ? LinkStyledBlackHover : LinkStyledBlack) }>Tarifs et Prestations</Link></div>
+    <div css={LinkHover}><Link link="/gallerie/" css={data.isHome ? (data.link === "/gallerie/" ? LinkStyledWhiteHover : LinkStyledWhite) : (data.link === "/gallerie/" ? LinkStyledBlackHover : LinkStyledBlack) }>Gallerie</Link></div>
+    <div css={LinkHover}><Link link="/contact/" css={data.isHome ? (data.link === "/contact/" ? LinkStyledWhiteHover : LinkStyledWhite) : (data.link === "/contact/" ? LinkStyledBlackHover : LinkStyledBlack) }>Contact</Link></div>
   </div>
   )
 }
@@ -56,6 +57,16 @@ const LinkStyled = css`
 `
 
 
+const LinkStyledWhiteHover = css`
+  ${LinkStyled}
+  color: ${white};
+  text-decoration: underline; 
+`
+const LinkStyledBlackHover = css `
+  ${LinkStyled}
+  color: ${black};
+  text-decoration: underline; 
+`
 
 const LinkStyledBlack = css`
   ${LinkStyled}
@@ -78,7 +89,7 @@ const ContentHome = css`
     position: fixed;
     bottom: 0;
     right: 7%;
-    width: 60%;
+    width: 70%;
     height: 10vh;
     margin: 46px;
     background-color: rgba(255, 255, 255, 50%);

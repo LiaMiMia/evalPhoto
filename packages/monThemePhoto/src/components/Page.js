@@ -22,7 +22,7 @@ const Page = ({state, libraries}) => {
           text-align: center;
         }
         span, input, textarea {
-          width: 100%;
+          width: 95%;
           display: block;
         }
         input, textarea{
@@ -46,6 +46,7 @@ const Page = ({state, libraries}) => {
         form{
           margin: 20px;
           padding: 20px; 
+          width: 90%;
         }
 
         .submitButton{
@@ -98,22 +99,26 @@ const Page = ({state, libraries}) => {
             margin-right: auto;
           }
         }
+
+        fieldset{
+          border: none
+        }
         `
         
       }
     />
         <Menu/>
-        <Header/>
-        <div css={MediaIconsStyled}>
+        <Header className='hide'/>
+        <div className='hide' css={MediaIconsStyled}>
           <MediasIcons css={css`color: ${black}`}/>
         </div>
-        <Main>
+        <Main className='hide'>
           <h2 css={TitleCss}>{page.title.rendered}</h2>
           <div css={MainCss}>
           <Html2React html={page.content.rendered}/>
           </div>
         </Main>
-        <Footer/>
+        <Footer className='hide'/>
       </div>
   )
 }

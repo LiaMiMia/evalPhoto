@@ -20,19 +20,35 @@ class MenuMobilePage extends React.Component {
   }
 
   handleLoginClick() {
+    var hide = document.getElementsByClassName('hide');
+    const hides = Array.from(hide)
+    hides.forEach(hide => {
+      hide.style.display='none'
+    });
     this.setState({isloggedin: "true"});
   }
 
   handleLogoutClick() {
+    var MenuElement = document.getElementById('OpenMenu');
+    MenuElement.classList.add('MenuMobileClosePage');
+    var hide = document.getElementsByClassName('hide');
+    const hides = Array.from(hide)
+    hides.forEach(hide => {
+      hide.style.display='block'
+    });
+  setTimeout(()=>{
     this.setState({isloggedin: undefined});
-  }
+    MenuElement.classList.remove('MenuMobileClosePage');
+  }, '400')
+  
+}
 
   render() {
     const isloggedin = this.state.isloggedin;
     let Menu;
     // const media = state.source.url+"/wp-content/uploads/"
     if (isloggedin === "true") {
-      Menu = <MenuMobileOpen>
+      Menu = <div id='OpenMenu' className='MenuMobileOpenPage'>
             <div css={MenuBox}>
             <LogoMenuMobile/>
               <Link link="/" css={StyledLink} onClick={this.handleLogoutClick}>Accueil</Link>
@@ -41,7 +57,7 @@ class MenuMobilePage extends React.Component {
               <Link link="/contact/" css={StyledLink} onClick={this.handleLogoutClick}>Contact</Link>
               <CgCloseR onClick={this.handleLogoutClick} css={IconCssClose}/>
             </div>
-        </MenuMobileOpen>
+        </div>
     } else {
       Menu = <GiHamburgerMenu css={Iconcss} onClick={this.handleLoginClick}/>
     }

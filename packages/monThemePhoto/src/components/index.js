@@ -5,6 +5,7 @@ import HomePage from './homePage'
 import TheHead from "./head"
 import Loader from "./loader"
 import List from "./post"
+import {menuAnimClose, pink, menuAnimOpen, menuAnimOpenPage, menuAnimClosePage, white } from "./varCss"
 
 
 const Root = ({state}) => {
@@ -41,10 +42,97 @@ const Root = ({state}) => {
         h2{
           font-weight: initial;
         }
+        .MenuMobileOpen{
+          height: 100vh;
+          color: ${pink};
+          right: -11vw;
+          bottom: -6vh;
+          z-index: 1;
+          //left: 50%;
+          //right: 50%;
+          transform: translateY(100vh);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
+          background-color: #cccccc;
+          background-size: contain;
+          position: absolute;
+          width: 100vw;
+          animation: 0.3s ease-in ${menuAnimOpen};
+          animation-fill-mode: forwards;
+        }
+
+        .MenuMobileClose{
+          height: 100vh;
+          color: ${pink};
+          right: -11vw;
+          bottom: -6vh;
+          z-index: 1;
+          transform: translateY(100vh);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
+          background-color: #cccccc;
+          background-size: contain;
+          position: absolute;
+          width: 100vw;
+          animation: 0.3s ease-in ${menuAnimClose};
+          animation-fill-mode: forwards;
+        }
+
+        .MenuMobileOpenPage{
+          height: 100vh;
+          color: ${pink};
+          right: -15vw;
+          top: -15vh;
+          z-index: 3;
+          transform: translateY(100vh);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
+          background-color: #cccccc;
+          background-size: contain;
+          position: absolute;
+          width: 100vw;
+          animation: 0.3s ease-in ${menuAnimOpenPage};
+          animation-fill-mode: forwards;
+        }
+
+        .MenuMobileClosePage{
+          height: 100vh;
+          color: ${pink};
+          right: -15vw;
+          top: -15vh;
+          z-index: 3;
+          transform: translate(10vh,100vh);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
+          background-color: #cccccc;
+          background-size: contain;
+          position: absolute;
+          width: 100vw;
+          animation: 0.3s ease-in ${menuAnimClosePage};
+          animation-fill-mode: forwards;
+        }
+
+        .form-submit{
+          width: 23%;
+          color: ${pink};
+          font-size: large;
+          border-radius: 10px;
+          &:hover{
+            background-color: ${pink};
+            color : ${white};
+          }
+        }
       `}
     />
       <TheHead></TheHead>
-      {/* <Loader/>  */}
       {data.isFetching && <Loader/>||
         (data.isHome && <HomePage data={data} css={css`
           width: 100vw;
@@ -52,7 +140,6 @@ const Root = ({state}) => {
         `}/>)||
         (data.isPage && <Page data={data}/>)||
         (data.isArchive && <List/>)}
-      {/* <GalleriePage/> */}
     </>
   )
 }

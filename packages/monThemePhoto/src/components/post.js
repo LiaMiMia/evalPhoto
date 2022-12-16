@@ -19,7 +19,7 @@ const List = ({ state }) => {
     constructor(props){
       super(props); 
       this.state = {
-        selectOptionValue: 10
+        selectOptionValue: 1
       }
     }
 
@@ -45,15 +45,16 @@ const List = ({ state }) => {
         })}
 
         </select>
-
+        <div css={css`display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;`}>
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
         const fmediaId = post.featured_media
         const postCategoriesId = post.categories
         
-        return( postCategoriesId.includes(Number(this.state.selectOptionValue)) ? 
+        return(postCategoriesId.includes(Number(this.state.selectOptionValue)) ? 
           <div key={item.id} css={css`
-            //height: 50vh;
             width: 40%;
             margin-left: auto;
             margin-right: auto;
@@ -67,7 +68,7 @@ const List = ({ state }) => {
        </div> : null
         )
       })}
-
+      </div>
     </div>)
     
   }}
@@ -89,15 +90,15 @@ const List = ({ state }) => {
       }
       />
       <Menu/>
-      <Header/>
-      <div css={MediaIconsStyled}>
+      <Header className='hide'/>
+      <div className='hide' css={MediaIconsStyled}>
         <MediasIcons css={css`color: ${black}`}/>
       </div>
-      <Main>
-      <h2 css={css` width: 100%;`}>Gallerie</h2>
-      <Select/>
+      <Main className='hide'>
+      <h2 className='hide' css={css` width: 100%;`}>Gallerie</h2>
+      <Select className='hide'/>
       </Main>
-      <Footer/>
+      <Footer className='hide'/>
     </div>
   )
 }
@@ -112,7 +113,6 @@ const selectStyle = css`
   -webkit-appearance: button;
   appearance: button;
   outline: none;
-  border-radius: 10% 10% 10% 10% / 44% 44% 38% 38%;
   border-bottom: 3px solid black;
   margin-left: 10%;
   margin-top: 20px;

@@ -21,7 +21,7 @@ const MenuConstant = css`
 
 const LinkTransition = keyframes`
     from{
-      color:${pink}}; 
+      color:${pink}; 
     }
     to{
       color:${black};
@@ -78,40 +78,35 @@ const animTranslateIconsOpen = keyframes`
       transform: translateX(0px);
     }
 `
-const menuAnim = keyframes`
-    from{
-      height: 100vh;
-      color: ${pink};
-      top: 0;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
-      background-color: #cccccc;
-      background-size: contain;
-      position: fixed;
-      width: 200vw;
-      transform: translateY(100vh); 
-    }to{
-      height: 100vh;
-      color: ${pink};
-      top: 0;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-image: url("http://charles-cantin-photographe.local/wp-content/uploads/2022/11/jakayla-toney-oEmI4JGpCGc-unsplash-scaled.jpg");
-      background-color: #cccccc;
-      background-size: contain;
-      position: fixed;
-      width: 200vw;
-    }
+const menuAnimOpen = keyframes`
+  from{
+    transform: translateY(-100vh);
+  }to{
+    transform: translateY(0vh);
+  }
+`
 
+const menuAnimClose = keyframes`
+  from{
+    transform: translateY(0vh);
+  }to{
+    transform: translateY(-100vh);
+  }
+`
+const menuAnimClosePage = keyframes`
+  from{
+    transform: translateY(0vh);
+  }to{
+    transform: translateY(-100vh);
+  }
+`
+
+const menuAnimOpenPage = keyframes`
+  from{
+    transform: translateY(-100vh);
+  }to{
+    transform: translateY(0vh);
+  }
 `
 
 export {pink, 
@@ -127,7 +122,11 @@ export {pink,
         IconRotateTransitionOpen, 
         animTranslateIconsClose,
         animTranslateIconsOpen, 
-        menuAnim, 
+        // menuAnim, 
         IconTransitionHome, 
-        MobileBP
+        MobileBP, 
+        menuAnimClose,
+        menuAnimOpen,
+        menuAnimClosePage,
+        menuAnimOpenPage
       }

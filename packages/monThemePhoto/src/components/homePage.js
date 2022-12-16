@@ -2,7 +2,7 @@ import React from "react"
 import { connect, styled, css } from "frontity"
 import {MenuHome} from "./menu"
 import FeaturedMedia from "./featuredMedia"
-import { white} from "./varCss"
+import { black} from "./varCss"
 import MediaIcons from "./MediasIcons"
 import MediaLogo from "./MediaLogo"
 
@@ -61,10 +61,19 @@ const PageContentStyled = css`
     transform: translate(-50%, -50%);
     width: 200px; 
     height: 100px;
-    color: ${white};
+    color: ${black};
     display: flex;
+    align-items: center;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(255, 255, 255, 50%);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    justify-content: center;
+    @media (min-width: 380px){
+      font-size: larger;
+    }
+    
 `
 const MediaIconsStyled = css`
   position: absolute; 
@@ -73,5 +82,7 @@ const MediaIconsStyled = css`
   left: 20px;
   transform: translate(-50%, -50%);
   margin-left: 30px;
-
+  @media (max-width: 360px){
+    top: 80%;
+  }
 `
